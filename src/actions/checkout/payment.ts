@@ -27,6 +27,7 @@ export async function processPayment(paymentData: {
     const payment = new Payment(client)
 
     const result = await payment.create({
+      requestOptions:{testToken:true},
       body: {
         token: paymentData.token,
         installments: paymentData.installments,
